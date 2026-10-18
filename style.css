@@ -9,6 +9,10 @@ body {
   overflow-x: hidden;
 }
 
+/* Language visibility — driven by body[data-lang] */
+body[data-lang="zh"] .lang-en { display: none !important; }
+body[data-lang="en"] .lang-zh { display: none !important; }
+
 .hearts { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
 .heart {
   position: absolute;

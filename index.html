@@ -7,7 +7,7 @@
 <meta name="description" content="Tahir & Li Qi — A Little World of Love. 一个属于塔希尔和李琪的爱情小世界。">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-lang="zh">
 <div class="hearts" id="hearts"></div>
 
 <nav>
@@ -23,48 +23,48 @@
     <img src="images/liqi.jpg" alt="Li Qi 李琪">
   </div>
   <h1 class="lang-zh">塔希尔 ❤️ 李琪</h1>
-  <h1 class="lang-en" style="display:none">Tahir ❤️ Li Qi</h1>
+  <h1 class="lang-en">Tahir ❤️ Li Qi</h1>
   <p class="subtitle lang-zh">属于我们两个人的爱情小世界</p>
-  <p class="subtitle lang-en" style="display:none">A Little World of Love, just for the two of us</p>
+  <p class="subtitle lang-en">A Little World of Love, just for the two of us</p>
   <div class="love-quote lang-zh">"遇见你，是我一生中最美的意外。"</div>
-  <div class="love-quote lang-en" style="display:none">"Meeting you was the most beautiful accident of my life."</div>
+  <div class="love-quote lang-en">"Meeting you was the most beautiful accident of my life."</div>
 </header>
 
 <main>
   <section class="articles">
     <h2 class="lang-zh">💌 给李琪的情书</h2>
-    <h2 class="lang-en" style="display:none">💌 Love Letters to Li Qi</h2>
+    <h2 class="lang-en">💌 Love Letters to Li Qi</h2>
 
     <a href="articles/article1.html" class="card">
       <div class="card-emoji">🌙</div>
       <h3 class="lang-zh">你对我微笑的那一天</h3>
-      <h3 class="lang-en" style="display:none">The Day You Smiled at Me</h3>
+      <h3 class="lang-en">The Day You Smiled at Me</h3>
       <p class="lang-zh">第一次见到你，我的世界从此改变了颜色……</p>
-      <p class="lang-en" style="display:none">The first time I saw you, my world changed color forever…</p>
+      <p class="lang-en">The first time I saw you, my world changed color forever…</p>
     </a>
 
     <a href="articles/article2.html" class="card">
       <div class="card-emoji">🌹</div>
       <h3 class="lang-zh">我爱你的一千个理由</h3>
-      <h3 class="lang-en" style="display:none">A Thousand Reasons I Love You</h3>
+      <h3 class="lang-en">A Thousand Reasons I Love You</h3>
       <p class="lang-zh">你的笑容、你的善良、你的一切，都是我爱你的理由……</p>
-      <p class="lang-en" style="display:none">Your smile, your kindness, everything about you is why I love you…</p>
+      <p class="lang-en">Your smile, your kindness, everything about you is why I love you…</p>
     </a>
 
     <a href="articles/article3.html" class="card">
       <div class="card-emoji">⭐</div>
       <h3 class="lang-zh">我写在星星上的承诺</h3>
-      <h3 class="lang-en" style="display:none">My Promise, Written in the Stars</h3>
+      <h3 class="lang-en">My Promise, Written in the Stars</h3>
       <p class="lang-zh">无论未来有多少风雨，我都会牵着你的手走下去……</p>
-      <p class="lang-en" style="display:none">No matter what storms come, I will hold your hand and walk on…</p>
+      <p class="lang-en">No matter what storms come, I will hold your hand and walk on…</p>
     </a>
   </section>
 
   <section class="forever">
     <h2 class="lang-zh">💖 永远爱你</h2>
-    <h2 class="lang-en" style="display:none">💖 Forever Yours</h2>
+    <h2 class="lang-en">💖 Forever Yours</h2>
     <p class="lang-zh">这个网站是塔希尔为李琪亲手建造的。<br>每一行字，都是真心；每一颗心，都为你而跳。</p>
-    <p class="lang-en" style="display:none">This website was built by Tahir, for Li Qi, with his own hands.<br>Every word is sincere; every heart beats for you.</p>
+    <p class="lang-en">This website was built by Tahir, for Li Qi, with his own hands.<br>Every word is sincere; every heart beats for you.</p>
     <div class="signature">— Tahir ❤️ Li Qi —</div>
   </section>
 </main>
@@ -75,12 +75,11 @@
 
 <script>
 function setLang(l) {
-  document.querySelectorAll('.lang-zh').forEach(e => e.style.display = l === 'zh' ? '' : 'none');
-  document.querySelectorAll('.lang-en').forEach(e => e.style.display = l === 'en' ? '' : 'none');
+  document.body.setAttribute('data-lang', l);
   document.getElementById('btn-zh').classList.toggle('active', l === 'zh');
   document.getElementById('btn-en').classList.toggle('active', l === 'en');
   document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
-  localStorage.setItem('love-lang', l);
+  try { localStorage.setItem('love-lang', l); } catch (e) {}
 }
 (function() {
   var s = localStorage.getItem('love-lang') || 'zh';
