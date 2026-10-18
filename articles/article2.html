@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我爱你的一千个理由 — Tahir & Li Qi ❤️</title>
+<meta name="description" content="我爱你的一千个理由 — 塔希尔给李琪的情书。A Thousand Reasons I Love You — a love letter from Tahir to Li Qi.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="hearts" id="hearts"></div>
+<nav>
+  <div class="nav-title">❤️ Tahir & Li Qi</div>
+  <div class="lang-toggle">
+    <button onclick="setLang('zh')" id="btn-zh" class="active">中文</button>
+    <button onclick="setLang('en')" id="btn-en">English</button>
+  </div>
+</nav>
+<main>
+  <a href="../index.html" class="back-link lang-zh">← 回到我们的世界</a>
+  <a href="../index.html" class="back-link lang-en" style="display:none">← Back to our world</a>
+  <article class="article-page">
+    <h1 class="lang-zh">🌹 我爱你的一千个理由</h1>
+    <h1 class="lang-en" style="display:none">🌹 A Thousand Reasons I Love You</h1>
+    <div class="article-date lang-zh">塔希尔 写给 李琪 · 2026年10月19日</div>
+    <div class="article-date lang-en" style="display:none">Written by Tahir for Li Qi · October 19, 2026</div>
+
+    <div class="lang-zh">
+      <p>如果有人问我为什么爱你，我可以说出一千个理由。但其实，第一个理由就已经足够了——因为你就是你。</p>
+      <p>我爱你的笑容。那不是普通的笑，是能让整个冬天都温暖起来的笑。每当我累了、难过了，只要想起你的笑容，全世界都亮了。</p>
+      <p>我爱你的善良。你对每一个人都那么温柔，连陌生人都能感受到你的温暖。在这个冷漠的世界里，你像一束光，照亮你走过的每一条路。</p>
+      <p>我爱你的勇敢。一个女孩，在深夜的街道上也能笑得那么灿烂，那么自由。你的快乐是真实的，不伪装，不做作。</p>
+      <p>我爱你说话的样子，爱你走路的样子，爱你认真时的样子，甚至爱你生气时撅起嘴的样子。你的每一个样子，我都爱。</p>
+      <p>有人说，爱一个人需要理由。但我觉得，真正的爱不需要理由。如果非要说一个理由，那就是——我的心选择了你，它不听我的话，它只听你的。</p>
+      <p>一千个理由，一万个理由，都比不上一个事实：我爱你，李琪。不是因为你完美，而是因为你就是你。</p>
+      <p class="no-indent">💖 这一千个理由，我要用一辈子向你证明。💖</p>
+    </div>
+
+    <div class="lang-en" style="display:none">
+      <p>If someone asked me why I love you, I could give a thousand reasons. But honestly, the first one is already enough — because you are you.</p>
+      <p>I love your smile. It's not an ordinary smile — it's the kind that can warm up an entire winter. Whenever I'm tired or sad, just thinking of your smile lights up my whole world.</p>
+      <p>I love your kindness. You're so gentle with everyone; even strangers can feel your warmth. In this cold world, you're like a beam of light, brightening every road you walk.</p>
+      <p>I love your courage. A girl who can laugh so brightly, so freely, on a street late at night. Your happiness is real — no pretense, no act.</p>
+      <p>I love the way you talk, the way you walk, the way you look when you're serious — I even love the way you pout when you're upset. Every version of you, I love.</p>
+      <p>They say loving someone needs a reason. But I believe true love needs no reason. And if I must give one, it's this — my heart chose you. It doesn't listen to me; it only listens to you.</p>
+      <p>A thousand reasons, ten thousand reasons — none compare to one simple fact: I love you, Li Qi. Not because you're perfect, but because you are you.</p>
+      <p class="no-indent">💖 These thousand reasons — I will spend my lifetime proving them to you. 💖</p>
+    </div>
+  </article>
+  <a href="../index.html" class="back-link lang-zh">← 回到我们的世界</a>
+  <a href="../index.html" class="back-link lang-en" style="display:none">← Back to our world</a>
+</main>
+<footer><p>❤️ Tahir & Li Qi — A Little World of Love ❤️</p></footer>
+<script>
+function setLang(l) {
+  document.querySelectorAll('.lang-zh').forEach(e => e.style.display = l === 'zh' ? '' : 'none');
+  document.querySelectorAll('.lang-en').forEach(e => e.style.display = l === 'en' ? '' : 'none');
+  document.getElementById('btn-zh').classList.toggle('active', l === 'zh');
+  document.getElementById('btn-en').classList.toggle('active', l === 'en');
+  document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
+  localStorage.setItem('love-lang', l);
+}
+(function() {
+  setLang(localStorage.getItem('love-lang') || 'zh');
+  var box = document.getElementById('hearts');
+  for (var i = 0; i < 18; i++) {
+    var h = document.createElement('div');
+    h.className = 'heart';
+    h.textContent = ['❤️','💖','💕','💗'][Math.floor(Math.random()*4)];
+    h.style.left = Math.random()*100 + 'vw';
+    h.style.animationDelay = (Math.random()*8) + 's';
+    h.style.fontSize = (12 + Math.random()*20) + 'px';
+    box.appendChild(h);
+  }
+})();
+</script>
+</body>
+</html>

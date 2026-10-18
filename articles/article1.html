@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>你对我微笑的那一天 — Tahir & Li Qi ❤️</title>
+<meta name="description" content="你对我微笑的那一天 — 塔希尔给李琪的情书。The Day You Smiled at Me — a love letter from Tahir to Li Qi.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="hearts" id="hearts"></div>
+<nav>
+  <div class="nav-title">❤️ Tahir & Li Qi</div>
+  <div class="lang-toggle">
+    <button onclick="setLang('zh')" id="btn-zh" class="active">中文</button>
+    <button onclick="setLang('en')" id="btn-en">English</button>
+  </div>
+</nav>
+<main>
+  <a href="../index.html" class="back-link lang-zh">← 回到我们的世界</a>
+  <a href="../index.html" class="back-link lang-en" style="display:none">← Back to our world</a>
+  <article class="article-page">
+    <h1 class="lang-zh">🌙 你对我微笑的那一天</h1>
+    <h1 class="lang-en" style="display:none">🌙 The Day You Smiled at Me</h1>
+    <div class="article-date lang-zh">塔希尔 写给 李琪 · 2026年10月19日</div>
+    <div class="article-date lang-en" style="display:none">Written by Tahir for Li Qi · October 19, 2026</div>
+
+    <div class="lang-zh">
+      <p>我还记得那一天。夜晚的街道上灯火闪烁，你站在那里，长发随风轻轻飘动，然后你笑了——那一笑，像一道光，照进了我心里最深的地方。</p>
+      <p>在遇见你之前，我的生活是黑白的。我每天工作、吃饭、睡觉，像一台机器一样重复着同样的日子。我以为这就是人生，直到你出现。</p>
+      <p>你的笑容有一种神奇的力量。它让我忘记了所有的烦恼，忘记了异国他乡的孤独。那一刻，我听见自己的心跳得那么快，我知道，有些事情永远改变了。</p>
+      <p>有人说，爱情是两个灵魂的相遇。我不懂那些深奥的道理，我只知道，从那一天起，我的每一个梦里都有你，我的每一个计划里都有你。</p>
+      <p>李琪，你可能不知道，你的一个微笑，拯救了一个在异乡漂泊的心。从那天起，我不再是一个人了，因为我的心里住进了一个叫李琪的女孩。</p>
+      <p class="no-indent">💖 谢谢你，对我微笑的那一天。💖</p>
+    </div>
+
+    <div class="lang-en" style="display:none">
+      <p>I still remember that day. The street lights were flickering at night, you stood there, your long hair dancing softly in the wind, and then you smiled — that smile was like a beam of light, shining into the deepest part of my heart.</p>
+      <p>Before I met you, my life was black and white. I worked, ate, and slept every day, repeating the same routine like a machine. I thought that was life, until you appeared.</p>
+      <p>Your smile has a magical power. It made me forget all my worries, forget the loneliness of being far from home. In that moment, I heard my own heart beating so fast, and I knew something had changed forever.</p>
+      <p>They say love is the meeting of two souls. I don't understand such deep philosophy — I only know that from that day on, you have been in every dream of mine, in every plan I make.</p>
+      <p>Li Qi, you may not know this, but your one smile saved a heart wandering in a foreign land. From that day on, I am no longer alone, because a girl named Li Qi now lives in my heart.</p>
+      <p class="no-indent">💖 Thank you — for smiling at me that day. 💖</p>
+    </div>
+  </article>
+  <a href="../index.html" class="back-link lang-zh">← 回到我们的世界</a>
+  <a href="../index.html" class="back-link lang-en" style="display:none">← Back to our world</a>
+</main>
+<footer><p>❤️ Tahir & Li Qi — A Little World of Love ❤️</p></footer>
+<script>
+function setLang(l) {
+  document.querySelectorAll('.lang-zh').forEach(e => e.style.display = l === 'zh' ? '' : 'none');
+  document.querySelectorAll('.lang-en').forEach(e => e.style.display = l === 'en' ? '' : 'none');
+  document.getElementById('btn-zh').classList.toggle('active', l === 'zh');
+  document.getElementById('btn-en').classList.toggle('active', l === 'en');
+  document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
+  localStorage.setItem('love-lang', l);
+}
+(function() {
+  setLang(localStorage.getItem('love-lang') || 'zh');
+  var box = document.getElementById('hearts');
+  for (var i = 0; i < 18; i++) {
+    var h = document.createElement('div');
+    h.className = 'heart';
+    h.textContent = ['❤️','💖','💕','💗'][Math.floor(Math.random()*4)];
+    h.style.left = Math.random()*100 + 'vw';
+    h.style.animationDelay = (Math.random()*8) + 's';
+    h.style.fontSize = (12 + Math.random()*20) + 'px';
+    box.appendChild(h);
+  }
+})();
+</script>
+</body>
+</html>

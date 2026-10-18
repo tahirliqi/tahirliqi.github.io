@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我写在星星上的承诺 — Tahir & Li Qi ❤️</title>
+<meta name="description" content="我写在星星上的承诺 — 塔希尔给李琪的情书。My Promise, Written in the Stars — a love letter from Tahir to Li Qi.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="hearts" id="hearts"></div>
+<nav>
+  <div class="nav-title">❤️ Tahir & Li Qi</div>
+  <div class="lang-toggle">
+    <button onclick="setLang('zh')" id="btn-zh" class="active">中文</button>
+    <button onclick="setLang('en')" id="btn-en">English</button>
+  </div>
+</nav>
+<main>
+  <a href="../index.html" class="back-link lang-zh">← 回到我们的世界</a>
+  <a href="../index.html" class="back-link lang-en" style="display:none">← Back to our world</a>
+  <article class="article-page">
+    <h1 class="lang-zh">⭐ 我写在星星上的承诺</h1>
+    <h1 class="lang-en" style="display:none">⭐ My Promise, Written in the Stars</h1>
+    <div class="article-date lang-zh">塔希尔 写给 李琪 · 2026年10月19日</div>
+    <div class="article-date lang-en" style="display:none">Written by Tahir for Li Qi · October 19, 2026</div>
+
+    <div class="lang-zh">
+      <p>今天晚上，我看着天上的星星，一颗一颗地数着，然后我把我的承诺，一句一句地写在了星星上。这样，即使有一天我不在你身边，星星也会替我守护你。</p>
+      <p>我承诺，无论未来有多少风雨，我都会牵着你的手，一起走下去。顺境的时候，我和你一起笑；逆境的时候，我为你遮风挡雨。</p>
+      <p>我承诺，我会学好中文，只为能更懂你的心。我想听懂你的每一句话，想走进你的每一个梦。语言不应该成为我们之间的墙，而应该成为我们爱情的桥。</p>
+      <p>我承诺，我会努力工作，给你一个温暖的家。不一定是多大的房子，但一定是一个充满爱的地方，一个你每次回家都会微笑的地方。</p>
+      <p>我承诺，我会尊重你、珍惜你、保护你。你不是我的所有物，你是我的爱人，我的伙伴，我的灵魂伴侣。我会用一生去证明，你选择我是值得的。</p>
+      <p>李琪，我来自很远的地方，巴基斯坦。我们的文化不同，语言不同，但爱是相同的。今晚的星星可以作证——我的心，从遇见你的那一刻起，就只属于你一个人。</p>
+      <p>如果有一天你老了，头发白了，走不动了，我还会牵着你的手，像今天一样，看着星星，告诉你：李琪，我爱你，从过去，到现在，到永远。</p>
+      <p class="no-indent">💖 星星为证，我心永恒。💖</p>
+    </div>
+
+    <div class="lang-en" style="display:none">
+      <p>Tonight, I looked at the stars, counting them one by one, and I wrote my promises on them, sentence by sentence. That way, even if one day I'm not by your side, the stars will guard you for me.</p>
+      <p>I promise: no matter how many storms the future brings, I will hold your hand and walk on together. In good times, I'll laugh with you; in hard times, I'll shield you from the wind and rain.</p>
+      <p>I promise: I will learn Chinese well, just so I can understand your heart better. I want to understand every word you say, to walk into every dream you dream. Language should never be a wall between us — it should be a bridge for our love.</p>
+      <p>I promise: I will work hard to give you a warm home. Maybe not a big house, but a place full of love — a place where you'll smile every time you come home.</p>
+      <p>I promise: I will respect you, cherish you, protect you. You are not my possession — you are my lover, my partner, my soulmate. I will spend my life proving that choosing me was worth it.</p>
+      <p>Li Qi, I come from far away — Pakistan. Our cultures are different, our languages are different, but love is the same. Tonight's stars bear witness — my heart, from the moment I met you, belongs to you alone.</p>
+      <p>If one day you're old, your hair is white, and you can't walk anymore, I'll still hold your hand, just like today, look at the stars, and tell you: Li Qi, I love you — from the past, to the present, to forever.</p>
+      <p class="no-indent">💖 The stars bear witness; my heart is eternal. 💖</p>
+    </div>
+  </article>
+  <a href="../index.html" class="back-link lang-zh">← 回到我们的世界</a>
+  <a href="../index.html" class="back-link lang-en" style="display:none">← Back to our world</a>
+</main>
+<footer><p>❤️ Tahir & Li Qi — A Little World of Love ❤️</p></footer>
+<script>
+function setLang(l) {
+  document.querySelectorAll('.lang-zh').forEach(e => e.style.display = l === 'zh' ? '' : 'none');
+  document.querySelectorAll('.lang-en').forEach(e => e.style.display = l === 'en' ? '' : 'none');
+  document.getElementById('btn-zh').classList.toggle('active', l === 'zh');
+  document.getElementById('btn-en').classList.toggle('active', l === 'en');
+  document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
+  localStorage.setItem('love-lang', l);
+}
+(function() {
+  setLang(localStorage.getItem('love-lang') || 'zh');
+  var box = document.getElementById('hearts');
+  for (var i = 0; i < 18; i++) {
+    var h = document.createElement('div');
+    h.className = 'heart';
+    h.textContent = ['❤️','💖','💕','💗'][Math.floor(Math.random()*4)];
+    h.style.left = Math.random()*100 + 'vw';
+    h.style.animationDelay = (Math.random()*8) + 's';
+    h.style.fontSize = (12 + Math.random()*20) + 'px';
+    box.appendChild(h);
+  }
+})();
+</script>
+</body>
+</html>
