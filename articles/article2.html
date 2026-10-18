@@ -7,7 +7,7 @@
 <meta name="description" content="我爱你的一千个理由 — 塔希尔给李琪的情书。A Thousand Reasons I Love You — a love letter from Tahir to Li Qi.">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-lang="zh">
 <div class="hearts" id="hearts"></div>
 <nav>
   <div class="nav-title">❤️ Tahir & Li Qi</div>
@@ -18,12 +18,12 @@
 </nav>
 <main>
   <a href="../index.html" class="back-link lang-zh">← 回到我们的世界</a>
-  <a href="../index.html" class="back-link lang-en" style="display:none">← Back to our world</a>
+  <a href="../index.html" class="back-link lang-en">← Back to our world</a>
   <article class="article-page">
     <h1 class="lang-zh">🌹 我爱你的一千个理由</h1>
-    <h1 class="lang-en" style="display:none">🌹 A Thousand Reasons I Love You</h1>
+    <h1 class="lang-en">🌹 A Thousand Reasons I Love You</h1>
     <div class="article-date lang-zh">塔希尔 写给 李琪 · 2026年10月19日</div>
-    <div class="article-date lang-en" style="display:none">Written by Tahir for Li Qi · October 19, 2026</div>
+    <div class="article-date lang-en">Written by Tahir for Li Qi · October 19, 2026</div>
 
     <div class="lang-zh">
       <p>如果有人问我为什么爱你，我可以说出一千个理由。但其实，第一个理由就已经足够了——因为你就是你。</p>
@@ -36,7 +36,7 @@
       <p class="no-indent">💖 这一千个理由，我要用一辈子向你证明。💖</p>
     </div>
 
-    <div class="lang-en" style="display:none">
+    <div class="lang-en">
       <p>If someone asked me why I love you, I could give a thousand reasons. But honestly, the first one is already enough — because you are you.</p>
       <p>I love your smile. It's not an ordinary smile — it's the kind that can warm up an entire winter. Whenever I'm tired or sad, just thinking of your smile lights up my whole world.</p>
       <p>I love your kindness. You're so gentle with everyone; even strangers can feel your warmth. In this cold world, you're like a beam of light, brightening every road you walk.</p>
@@ -48,20 +48,19 @@
     </div>
   </article>
   <a href="../index.html" class="back-link lang-zh">← 回到我们的世界</a>
-  <a href="../index.html" class="back-link lang-en" style="display:none">← Back to our world</a>
+  <a href="../index.html" class="back-link lang-en">← Back to our world</a>
 </main>
 <footer><p>❤️ Tahir & Li Qi — A Little World of Love ❤️</p></footer>
 <script>
 function setLang(l) {
-  document.querySelectorAll('.lang-zh').forEach(e => e.style.display = l === 'zh' ? '' : 'none');
-  document.querySelectorAll('.lang-en').forEach(e => e.style.display = l === 'en' ? '' : 'none');
+  document.body.setAttribute('data-lang', l);
   document.getElementById('btn-zh').classList.toggle('active', l === 'zh');
   document.getElementById('btn-en').classList.toggle('active', l === 'en');
   document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
-  localStorage.setItem('love-lang', l);
+  try { localStorage.setItem('love-lang', l); } catch (e) {}
 }
 (function() {
-  setLang(localStorage.getItem('love-lang') || 'zh');
+  try { setLang(localStorage.getItem('love-lang') || 'zh'); } catch (e) { setLang('zh'); }
   var box = document.getElementById('hearts');
   for (var i = 0; i < 18; i++) {
     var h = document.createElement('div');

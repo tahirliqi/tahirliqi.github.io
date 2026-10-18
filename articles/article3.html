@@ -7,7 +7,7 @@
 <meta name="description" content="我写在星星上的承诺 — 塔希尔给李琪的情书。My Promise, Written in the Stars — a love letter from Tahir to Li Qi.">
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body data-lang="zh">
 <div class="hearts" id="hearts"></div>
 <nav>
   <div class="nav-title">❤️ Tahir & Li Qi</div>
@@ -18,12 +18,12 @@
 </nav>
 <main>
   <a href="../index.html" class="back-link lang-zh">← 回到我们的世界</a>
-  <a href="../index.html" class="back-link lang-en" style="display:none">← Back to our world</a>
+  <a href="../index.html" class="back-link lang-en">← Back to our world</a>
   <article class="article-page">
     <h1 class="lang-zh">⭐ 我写在星星上的承诺</h1>
-    <h1 class="lang-en" style="display:none">⭐ My Promise, Written in the Stars</h1>
+    <h1 class="lang-en">⭐ My Promise, Written in the Stars</h1>
     <div class="article-date lang-zh">塔希尔 写给 李琪 · 2026年10月19日</div>
-    <div class="article-date lang-en" style="display:none">Written by Tahir for Li Qi · October 19, 2026</div>
+    <div class="article-date lang-en">Written by Tahir for Li Qi · October 19, 2026</div>
 
     <div class="lang-zh">
       <p>今天晚上，我看着天上的星星，一颗一颗地数着，然后我把我的承诺，一句一句地写在了星星上。这样，即使有一天我不在你身边，星星也会替我守护你。</p>
@@ -36,7 +36,7 @@
       <p class="no-indent">💖 星星为证，我心永恒。💖</p>
     </div>
 
-    <div class="lang-en" style="display:none">
+    <div class="lang-en">
       <p>Tonight, I looked at the stars, counting them one by one, and I wrote my promises on them, sentence by sentence. That way, even if one day I'm not by your side, the stars will guard you for me.</p>
       <p>I promise: no matter how many storms the future brings, I will hold your hand and walk on together. In good times, I'll laugh with you; in hard times, I'll shield you from the wind and rain.</p>
       <p>I promise: I will learn Chinese well, just so I can understand your heart better. I want to understand every word you say, to walk into every dream you dream. Language should never be a wall between us — it should be a bridge for our love.</p>
@@ -48,20 +48,19 @@
     </div>
   </article>
   <a href="../index.html" class="back-link lang-zh">← 回到我们的世界</a>
-  <a href="../index.html" class="back-link lang-en" style="display:none">← Back to our world</a>
+  <a href="../index.html" class="back-link lang-en">← Back to our world</a>
 </main>
 <footer><p>❤️ Tahir & Li Qi — A Little World of Love ❤️</p></footer>
 <script>
 function setLang(l) {
-  document.querySelectorAll('.lang-zh').forEach(e => e.style.display = l === 'zh' ? '' : 'none');
-  document.querySelectorAll('.lang-en').forEach(e => e.style.display = l === 'en' ? '' : 'none');
+  document.body.setAttribute('data-lang', l);
   document.getElementById('btn-zh').classList.toggle('active', l === 'zh');
   document.getElementById('btn-en').classList.toggle('active', l === 'en');
   document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
-  localStorage.setItem('love-lang', l);
+  try { localStorage.setItem('love-lang', l); } catch (e) {}
 }
 (function() {
-  setLang(localStorage.getItem('love-lang') || 'zh');
+  try { setLang(localStorage.getItem('love-lang') || 'zh'); } catch (e) { setLang('zh'); }
   var box = document.getElementById('hearts');
   for (var i = 0; i < 18; i++) {
     var h = document.createElement('div');
