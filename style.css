@@ -166,6 +166,78 @@ main { max-width: 800px; margin: 0 auto; padding: 20px; position: relative; z-in
 .blessing-card h3 { color: #c2255c; font-size: 1.35rem; margin-bottom: 10px; }
 .blessing-card p { color: #6b3a4d; line-height: 2; font-size: 1.05rem; }
 
+/* Timeline */
+.timeline { margin: 28px 0; }
+.timeline h2 { text-align: center; color: #c2255c; margin: 32px 0 10px; font-size: 1.7rem; }
+.timeline-intro { text-align: center; color: #b0708a; font-style: italic; margin-bottom: 24px; }
+.timeline-item {
+  display: flex; gap: 16px; align-items: flex-start;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid #ffd6e4; border-radius: 18px;
+  padding: 20px; margin-bottom: 14px;
+  box-shadow: 0 4px 18px rgba(214,51,108,0.08);
+}
+.timeline-item.highlight {
+  border: 2px solid #ff6b9d;
+  background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+  box-shadow: 0 8px 28px rgba(214,51,108,0.2);
+}
+.timeline-dot { font-size: 2rem; flex-shrink: 0; }
+.timeline-content h3 { color: #c2255c; font-size: 1.15rem; margin-bottom: 6px; }
+.timeline-content p { color: #6b3a4d; line-height: 1.9; font-size: 1rem; }
+
+/* Love notes */
+.love-notes { text-align: center; margin: 28px 0; }
+.love-notes h2 { color: #c2255c; margin: 32px 0 10px; font-size: 1.7rem; }
+.love-notes > p { color: #b0708a; font-style: italic; margin-bottom: 18px; }
+.note-display {
+  background: rgba(255,255,255,0.9);
+  border: 2px dashed #ff9ebb; border-radius: 18px;
+  padding: 30px 24px; margin: 0 auto 18px; max-width: 600px;
+  min-height: 110px; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 18px rgba(214,51,108,0.1);
+}
+.note-display p { font-size: 1.2rem; color: #a61e4d; line-height: 2; font-style: italic; }
+.note-btn, .wish-btn {
+  background: linear-gradient(135deg, #ff6b9d, #d6336c);
+  color: #fff; border: none; border-radius: 30px;
+  padding: 14px 36px; font-size: 1.1rem; cursor: pointer;
+  box-shadow: 0 6px 20px rgba(214,51,108,0.35);
+  transition: transform 0.2s;
+}
+.note-btn:hover, .wish-btn:hover { transform: scale(1.05); }
+
+/* Promises */
+.promises { margin: 28px 0; }
+.promises h2 { text-align: center; color: #c2255c; margin: 32px 0 10px; font-size: 1.7rem; }
+.promises-intro { text-align: center; color: #b0708a; font-style: italic; margin-bottom: 22px; }
+.promise-card {
+  display: flex; gap: 16px; align-items: center;
+  background: rgba(255,255,255,0.9);
+  border-left: 4px solid #ff6b9d;
+  border-radius: 14px; padding: 18px 20px; margin-bottom: 12px;
+  box-shadow: 0 4px 16px rgba(214,51,108,0.08);
+}
+.promise-emoji { font-size: 2rem; flex-shrink: 0; }
+.promise-card p { color: #5c2e3e; line-height: 1.9; font-size: 1.02rem; }
+
+/* Wish */
+.wish { text-align: center; margin: 28px 0; padding: 20px; }
+.wish h2 { color: #c2255c; margin: 32px 0 10px; font-size: 1.7rem; }
+.wish > p { color: #b0708a; font-style: italic; margin-bottom: 20px; }
+.candle-area {
+  background: linear-gradient(135deg, #2b1a2e, #4a2545);
+  border-radius: 24px; padding: 44px 20px; margin: 0 auto 20px; max-width: 600px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+}
+.candle { font-size: 5rem; transition: all 0.5s; filter: grayscale(100%) brightness(0.6); }
+.candle.lit { filter: none; animation: flicker 1.5s ease-in-out infinite; }
+@keyframes flicker {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+.wish-text { color: #ffd6e4; font-size: 1.3rem; line-height: 2.2; margin-top: 20px; }
+
 .articles h2, .forever h2 {
   text-align: center; color: #c2255c; margin: 32px 0 20px; font-size: 1.7rem;
 }
