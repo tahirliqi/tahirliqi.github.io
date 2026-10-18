@@ -265,14 +265,10 @@
     <p class="lang-zh">闭上眼睛，在心里许一个愿，然后点燃蜡烛</p>
     <p class="lang-en">Close your eyes, make a wish in your heart, then light the candle</p>
     <div class="candle-area" id="candle-area">
-      <div class="candle" id="candle">🕯️</div>
-      <p class="wish-text lang-zh" id="wish-text-zh" style="display:none;">愿你的愿望成真！🎉<br>生日快乐，李琪！我爱你！❤️</p>
-      <p class="wish-text lang-en" id="wish-text-en" style="display:none;">May your wish come true! 🎉<br>Happy Birthday, Li Qi! I love you! ❤️</p>
+      <div class="candle lit" id="candle">🕯️</div>
+      <p class="wish-text lang-zh" id="wish-text-zh">愿你的愿望成真！🎉<br>生日快乐，李琪！我爱你！❤️</p>
+      <p class="wish-text lang-en" id="wish-text-en">May your wish come true! 🎉<br>Happy Birthday, Li Qi! I love you! ❤️</p>
     </div>
-    <button class="wish-btn" id="wish-btn" onclick="lightCandle()">
-      <span class="lang-zh">🕯️ 点燃生日蜡烛</span>
-      <span class="lang-en">🕯️ Light the Birthday Candle</span>
-    </button>
   </section>
 
   <section class="articles">
@@ -349,14 +345,7 @@ function showLoveNote() {
   var box = document.getElementById('note-display');
   box.innerHTML = '<p>' + (lang === 'zh' ? loveNotes[idx].zh : loveNotes[idx].en) + '</p>';
 }
-// Birthday candle
-function lightCandle() {
-  document.getElementById('candle').classList.add('lit');
-  var lang = document.body.getAttribute('data-lang') || 'zh';
-  document.getElementById('wish-text-zh').style.display = lang === 'zh' ? 'block' : 'none';
-  document.getElementById('wish-text-en').style.display = lang === 'en' ? 'block' : 'none';
-  document.getElementById('wish-btn').style.display = 'none';
-}
+// Birthday candle is lit by default (live burning)
 (function() {
   try { setLang(localStorage.getItem('love-lang') || 'zh'); } catch (e) { setLang('zh'); }
   function tickClock() {
