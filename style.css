@@ -264,6 +264,8 @@ main { max-width: 800px; margin: 0 auto; padding: 20px; position: relative; z-in
 .forever p { line-height: 2; color: #8a4a5e; font-size: 1.1rem; }
 .signature { margin-top: 16px; font-size: 1.3rem; color: #d6336c; font-weight: bold; }
 
+.article-photo { margin: 0 0 24px; text-align: center; }
+.article-photo img { width: 100%; max-width: 520px; border-radius: 18px; box-shadow: 0 8px 30px rgba(194, 37, 92, 0.25); }
 article.article-page {
   background: rgba(255,255,255,0.9);
   border-radius: 20px; border: 1px solid #ffd6e4;
